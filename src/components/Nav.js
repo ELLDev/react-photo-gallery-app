@@ -1,17 +1,23 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
-const Nav = () => (
+const Nav = ({ onSearch }) => (
   <nav className="main-nav">
     <ul>
       <li>
-        <NavLink to="/cats">Cats</NavLink>
+        <Link to="/sunsets" onClick={() => onSearch("sunsets")}>
+          Sunsets
+        </Link>
       </li>
       <li>
-        <NavLink to="/dogs">Dogs</NavLink>
+        <Link to="/waterfalls" onClick={() => onSearch("waterfalls")}>
+          Waterfalls
+        </Link>
       </li>
       <li>
-        <NavLink to="/computers">Computers</NavLink>
+        <Link to="/rainbows" onClick={() => onSearch("rainbows")}>
+          Rainbows
+        </Link>
       </li>
     </ul>
   </nav>

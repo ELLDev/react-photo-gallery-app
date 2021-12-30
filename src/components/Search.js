@@ -1,10 +1,8 @@
-import React, { Component } from "react";
-// import { useNavigate } from "react-router-dom";
-import Nav from "./Nav";
+import React, { Component } from 'react';
 
 class Search extends Component {
   state = {
-    searchText: "",
+    searchText: '',
   };
 
   onSearchChange = (e) => {
@@ -14,8 +12,6 @@ class Search extends Component {
     e.preventDefault();
     this.props.onSearch(this.state.searchText);
     e.currentTarget.reset();
-    // const history = useNavigate();
-    // this.props.history.push("/");
   };
 
   render() {
@@ -42,7 +38,6 @@ class Search extends Component {
             </svg>
           </button>
         </form>
-        <Nav />
       </div>
     );
   }
