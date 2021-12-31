@@ -3,6 +3,7 @@ import NotFound from "./NotFound";
 
 const PhotoContainer = (props) => {
   const results = props.data;
+  const query = props.queryName;
   let photos = results.map((photo) => (
     <li className="gif-wrap" key={photo.id}>
       <img
@@ -15,7 +16,7 @@ const PhotoContainer = (props) => {
   if (photos.length > 0) {
     return (
       <div className="photo-container">
-        <h2>Results</h2>
+        <h2>{query} Results</h2>
         <ul>{photos}</ul>
       </div>
     );

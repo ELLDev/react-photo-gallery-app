@@ -14,6 +14,7 @@ class App extends Component {
     super();
     this.state = {
       photos: [],
+      queryName: "",
     };
   }
 
@@ -25,6 +26,7 @@ class App extends Component {
       .then((response) => {
         this.setState({
           photos: response.data.photos.photo,
+          queryName: query,
         });
       })
       .catch((error) => {
@@ -33,7 +35,6 @@ class App extends Component {
   };
 
   render() {
-    console.log(this.state.photos);
     return (
       <div className="container">
         <BrowserRouter>
@@ -44,7 +45,7 @@ class App extends Component {
                 <>
                   <Search onSearch={this.performSearch} />
                   <Nav onSearch={this.performSearch} />
-                  <PhotoContainer data={this.state.photos} />
+                  <PhotoContainer data={this.state.photos} queryName={this.state.queryName} />
                 </>
               }
             />
