@@ -5,7 +5,7 @@ const PhotoContainer = (props) => {
   const results = props.data;
   const query = props.queryName;
   let photos = results.map((photo) => (
-    <li className="gif-wrap" key={photo.id}>
+    <li key={photo.id}>
       <img
         key={photo.id}
         alt=""
